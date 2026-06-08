@@ -8,7 +8,7 @@ class Horse(pygame.sprite.Sprite):
         self.speed = speed  # vitesse horizontale ou rapidité de déplacement sur l'axe X
         self.image = pygame.image.load("assets/sprites/horse/horse.png")
         self.rect = self.image.get_rect()  # rectangle de collision et position du sprite
-        self.rect.x = -100  # position de départ horizontale du cheval
+        self.rect.x = -250  # position de départ horizontale du cheval
 
         # variables de physique pour le saut
         self.vy = 0.0  # vitesse verticale actuelle (positive = descente, négative = montée)
