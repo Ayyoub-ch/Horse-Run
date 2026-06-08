@@ -8,8 +8,8 @@ class Game:
         # générer le joueur
         self.horse = Horse("Spirit", 10)
         self.obstacle = Obstacle("Barriere", 10)
-        self.screen = pygame.display.set_mode((1080, 720))
-        self.background = pygame.image.load("assets/sprites/background/background.png")
+        self.screen = pygame.display.set_mode((1480, 820))
+        self.background = pygame.image.load("assets/sprites/background/background2.png")
         self.pressed_keys = {
             pygame.K_SPACE: False,
         }
