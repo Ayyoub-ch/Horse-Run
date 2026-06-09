@@ -1,15 +1,20 @@
 import pygame
 from game.horse import Horse
 from game.obstacle import Obstacle
+clock = pygame.time.Clock()
 
 class Game:
     
     def __init__(self):
+        # Définit si le jeu a commencé ou non
+        self.is_playing = False
+        
         # générer le joueur
         self.horse = Horse("Spirit", 10)
         self.obstacle = Obstacle("Barriere", 10)
         self.screen = pygame.display.set_mode((1480, 820))
-        self.background = pygame.image.load("assets/sprites/background/background2.png")
+        self.background = pygame.image.load("assets/sprites/background/background.png")
+        self.background_play = pygame.image.load("assets/sprites/background/background2.png")
         self.pressed_keys = {
             pygame.K_SPACE: False,
         }
@@ -25,8 +30,19 @@ class Game:
         # mettre condition que le cheval a passé l'obstacle
         if self.horse.rect.right > self.obstacle.rect.left:
             self.score += 1
-
-
+    
+    # def game_over(self):
+    #     if self.horse.rect.colliderect(self.obstacle.rect):
+    #         print("Game Over !")
+    #         # réinitialiser le jeu
+    #         self.is_playing = False
+    #         self.score = 0
+    #         self.metre = 0
+    #         self.horse.rect.x = -250
+    #         self.horse.rect.bottom = self.horse.ground_y
+    #         self.obstacle.rect.x = 1000
+            
+        
     def update(self, screen):
         dt = clock.tick(60) / 16
 

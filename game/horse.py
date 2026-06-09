@@ -26,6 +26,7 @@ class Horse(pygame.sprite.Sprite):
                 initial_vy = self.initial_vy
             self.vy = initial_vy
             self.is_jumping = True
+    
 
     def update(self, dt=1, ground_y=None):
         """Met à jour la position du cheval chaque frame.
