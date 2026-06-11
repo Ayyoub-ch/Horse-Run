@@ -15,7 +15,7 @@ class Horse(pygame.sprite.Sprite):
         self.g = 0.5  # gravité appliquée chaque frame pour faire descendre le cheval
         self.is_jumping = False  # indique si le cheval est en train de sauter ou non
         self.ground_y = None  # hauteur du sol en pixels, utilisée pour détecter l'atterrissage
-        self.initial_vy = -12  # impulsion verticale de départ du saut (plus petit = saut plus haut)
+        self.initial_vy = -15  # impulsion verticale de départ du saut (plus petit = saut plus haut)
         
     def start_jump(self, initial_vy=None):
         """Déclenche le saut en appliquant une impulsion verticale."""

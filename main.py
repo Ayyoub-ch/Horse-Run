@@ -5,11 +5,11 @@ pygame.init()
 
 # Générer la fenêtre de jeu
 pygame.display.set_caption("Horse Run", "1.0")
-screen = pygame.display.set_mode((1480, 1020))
+screen = pygame.display.set_mode((1480, 820))
 
 # Définir la position du sol
-ground_y = 1114
-ground_y_obstacle = 1080
+ground_y = 1100
+ground_y_obstacle = 670
 
 
 # Importer l'arrière-plan du jeu
@@ -28,21 +28,21 @@ play_button = pygame.image.load("assets/sprites/menu/play_button.png")
 play_button = pygame.transform.scale(play_button, (500, 250)) # redimensionner le bouton de jeu pour qu'il soit plus petit
 play_button_rect = play_button.get_rect()
 play_button_rect.x = screen.get_width() / 2 - play_button_rect.width / 2
-play_button_rect.y = banner_rect.y + banner_rect.height - 20
+play_button_rect.y = banner_rect.y + banner_rect.height - 30
 
 # importer le bouton d'option
 option_button = pygame.image.load("assets/sprites/menu/option_button.png")
 option_button = pygame.transform.scale(option_button, (500, 250)) # redimensionner le bouton d'option pour qu'il soit plus petit
 option_button_rect = option_button.get_rect()
 option_button_rect.x = screen.get_width() / 2  - 800
-option_button_rect.y = banner_rect.y + banner_rect.height - 25
+option_button_rect.y = banner_rect.y + banner_rect.height - 30
 
 # importer le bouton de shop
 shop_button = pygame.image.load("assets/sprites/menu/shop_button.png")
 shop_button = pygame.transform.scale(shop_button, (500, 250)) # redimensionner le bouton de shop pour qu'il soit plus petit
 shop_button_rect = shop_button.get_rect()
 shop_button_rect.x = screen.get_width() / 2  + 200
-shop_button_rect.y = banner_rect.y + banner_rect.height - 25
+shop_button_rect.y = banner_rect.y + banner_rect.height - 30
 
 # Charger le jeu
 game = Game()
@@ -122,4 +122,10 @@ while running:
     
     # Condition pour changer l'arrière-plan en fonction de la distance parcourue
     # Boucle afin que cela se répète à chaque fois que le cheval avance
-    
+    def background_change(self):
+        if self.metre < 100:
+            self.background_play = self.background
+        elif self.metre < 200:
+            self.background_play = background_after
+        else:
+            self.background_play = background_night
